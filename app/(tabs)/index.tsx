@@ -1,5 +1,3 @@
-// app/(tabs)/index.tsx
-
 import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, View, Text, Button, Alert, Platform } from 'react-native';
 import MapView, { Polyline, Marker } from 'react-native-maps';
@@ -12,18 +10,15 @@ interface Coordinate {
 }
 
 export default function DiarioAtivoScreen() {
-  // --- Estados do Aplicativo ---
   const [isTracking, setIsTracking] = useState(false);
   const [path, setPath] = useState<Coordinate[]>([]);
   const [activityName, setActivityName] = useState<string | null>(null);
   const [currentLocation, setCurrentLocation] = useState<Coordinate | null>(null);
 
-  // Referência para controlar o mapa (ex: centralizar)
   const mapRef = useRef<MapView>(null);
-  // Referência para o "listener" do GPS, para podermos desligá-lo
   const locationSubscription = useRef<Location.LocationSubscription | null>(null);
 
-  // --- Lógica de Permissão do GPS ---
+  // --- Permissão do GPS ---
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
