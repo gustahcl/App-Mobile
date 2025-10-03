@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #3498db; /* Azul */
+    --danger-color: #e74c3c;  /* Vermelho */
+    --light-color: #ffffff;
+    --dark-color: #2c3e50;
+    --grey-color: #7f8c8d;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#map {
+    flex-grow: 1;
+    background-color: #e0e0e0;
+    z-index: 1;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--light-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 1000;
+}
+
+.activity-info {
+    flex-grow: 1;
+}
+
+#activityName {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--dark-color);
+}
+
+#activityDetails {
+    font-size: 0.8rem;
+    margin: 2px 0 0 0;
+    color: var(--grey-color);
+}
+
+#toggleTrackingBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--light-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-left: 15px;
+    min-width: 110px;
+}
+
+#toggleTrackingBtn .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+#toggleTrackingBtn.start {
+    background-color: var(--primary-color);
+}
+
+#toggleTrackingBtn.stop {
+    background-color: var(--danger-color);
+}
+
+#toggleTrackingBtn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Indicador "Gravando..." */
+.status-overlay {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(231, 76, 60, 0.8);
+    color: var(--light-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}

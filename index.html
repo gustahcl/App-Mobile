@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Diário de Bordo Ativo</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="map"></div>
+    <div class="status-overlay" id="statusOverlay" style="display: none;">
+        <p id="statusText">Gravando...</p>
+    </div>
+
+    <div class="controls">
+        <div class="activity-info">
+            <p id="activityName">Pronto para começar sua atividade?</p>
+            <p id="activityDetails">Distância: 0m</p>
+        </div>
+        <button id="toggleTrackingBtn" class="start">
+            <span class="material-symbols-outlined icon">play_arrow</span>
+            <span class="text">Iniciar</span>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
